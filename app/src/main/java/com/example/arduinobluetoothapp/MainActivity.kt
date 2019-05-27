@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         disableInput()
+        main_log.append("Welcome to ArduinoBluetoothApp!\n")
         main_device_selection_container.setOnClickListener{
             searchDevices()
         }
