@@ -9,5 +9,6 @@ enum class GyroscopeData{
     Z,
     PITCH,
     HEADING,
-    ROLL
+    ROLL,
+    ANGLE
 }

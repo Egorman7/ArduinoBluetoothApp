@@ -2,9 +2,9 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main_drawer">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_arrow_drop_down"
+                android:src="@drawable/ic_search_black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/main_toogle"
+            app:layout_constraintBottom_toTopOf="@+id/main_toogle_brightness"
             app:layout_constraintTop_toBottomOf="@id/main_device_selection_container">
 
             <TextView
@@ -85,14 +85,37 @@
             app:layout_constraintTop_toTopOf="@id/main_sense" />
 
         <ToggleButton
-            android:id="@+id/main_toogle"
+            android:id="@+id/main_toogle_brightness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="ToggleButton"
+            android:textOff="Brightness OFF"
+            android:textOn="Brightness ON"
             app:layout_constraintBottom_toTopOf="@+id/main_sense"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/main_toogle_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="ToggleButton"
+            android:textOff="VOLUME OFF"
+            android:textOn="VOLUME ON"
+            app:layout_constraintBottom_toTopOf="@+id/main_sense"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/main_button_calibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/main_toogle_volume"
+            app:layout_constraintEnd_toStartOf="@id/main_toogle_brightness"
+            app:layout_constraintBottom_toBottomOf="@id/main_toogle_brightness"
+            android:text="Set Zero"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -119,8 +142,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="X"
-                    android:checked="true"/>
+                    android:checked="true"
+                    android:text="X" />
 
                 <RadioButton
                     android:id="@+id/main_radio_y"
@@ -156,6 +179,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Roll" />
+
+                <RadioButton
+                    android:id="@+id/main_radio_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Angle" />
             </RadioGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.navigation.NavigationView>
